@@ -1,19 +1,25 @@
 import React, { Component, lazy, Suspense } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Header from './header/Header.component';
-const PostList = lazy(() => import('./post-list/PostList.component'));
+const PostsList = lazy(() => import('./posts-list/PostsList.component'));
+const About = lazy(() => import('./about/About.component'));
 
 class MyComponent extends Component {
 
   render() {
     return (
-      <Suspense fallback={<div>Loading...</div>}>
-        <Router>
-          <Header />
-          <Route path="/posts" component={PostList} />
-        </Router>
-      </Suspense>
+      <div>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Router>
+            <Header />
+            <Switch>
+              <Route path="/posts" component={PostsList} />
+              <Route path="/about" component={About} />
+            </Switch>
+          </Router>
+        </Suspense>
+      </div>
     );
   }
 }

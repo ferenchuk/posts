@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class PostList extends Component {
+class PostsList extends Component {
 
     render() {
         return (
@@ -9,4 +9,4 @@ class PostList extends Component {
     }
 }
 
-export default PostList;
+export default PostsList;
