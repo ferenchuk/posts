@@ -7,7 +7,7 @@
     "build": "webpack --mode production",
     "start": "webpack-dev-server --open --mode development"
   },
-  "author": "",
+  "author": "Ivan Ferenchuk",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.5.5",
