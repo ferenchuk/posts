@@ -1,6 +1,6 @@
 import * as types from './postList.constants';
 
-export const getPostsList = () => {
+export  const getPostsList = () => {
   return {
     type: types.GET_POST_LIST
   }

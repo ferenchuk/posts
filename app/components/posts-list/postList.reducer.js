@@ -14,13 +14,13 @@ export default function posts(state = initialState, action) {
       return state;
 
     case constants.GET_POST_LIST_SUCCESS:
-      debugger;
-      return [
+      return {
         ...state,
-        {
-          items: payload.items
-        }
-      ];
+        items: payload.items
+      };
+
+    case constants.GET_POST_LIST_FAILED:
+      return state;
 
     default:
       return state;
