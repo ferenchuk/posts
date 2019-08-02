@@ -3,7 +3,8 @@ import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import Header from './header/Header';
 const PostsList = lazy(() => import('./posts-list/PostsList'));
 const About = lazy(() => import('./about/About'));
-import PostItem from './posts-list/post-item/PostItem';
+const PostItem = lazy(() => import('./posts-list/post-item/PostItem'));
+import ContactUs from './contact-us/ContactUs';
 import Footer from './footer/Footer';
 import styles from './styles.css';
 
@@ -19,6 +20,7 @@ class MyComponent extends Component {
               <Route exact path="/posts" component={PostsList} />
               <Route exact path="/posts/:id" component={PostItem} />
               <Route path="/about" component={About} />
+              <Route path="/contact-us" component={ContactUs} />
             </Switch>
           </div>
           <Footer />
