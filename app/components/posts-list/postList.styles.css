@@ -1,8 +1,28 @@
-.post-list {
-
+.post-list-wrapper {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.postListItem {
-  padding: 20px;
-  border-bottom: 1px solid gray;
+.post-list-item {
+  width: 33.33%;
+  padding: 0 15px;
+  margin-bottom: 40px;
+}
+
+.post-list-item img {
+  max-width: 100%;
+  margin-bottom: 30px;
+}
+
+.post-list-item h2 {
+  font-size: 20px;
+  color: #252525;
+  font-weight: 600;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.post-list-item p {
+  color: #757575;
 }
