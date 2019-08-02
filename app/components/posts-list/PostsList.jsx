@@ -1,22 +1,35 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {
-    getPostsList
+  getPostsList
 } from './postList.actions';
+import styles from './postList.styles.css';
 
 class PostsList extends Component {
 
-    componentDidMount() {
-        this.props.getPostsList();
-    }
+  componentDidMount() {
+    this.props.getPostsList();
+  }
 
-    render() {
-        return (
-          <div>Post list</div>
-        );
-    }
+  render() {
+    const { posts } = this.props;
+
+    return (
+      <div>
+        {posts && posts.items.map(post => (
+          <div className={styles.postListItem} key={post.id}>
+            <h2>{post.name}</h2>
+            <p>{post.body}</p>
+          </div>
+        ))}
+      </div>
+    );
+  }
 }
 
-export default connect(null, {
-    getPostsList
+
+export default connect(state => ({
+   posts: state.postList
+}), {
+  getPostsList
 })(PostsList);

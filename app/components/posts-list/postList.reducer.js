@@ -7,7 +7,7 @@ const initialState = {
 };
 
 export default function posts(state = initialState, action) {
-  const{ type, payload } = action;
+  const {type, payload} = action;
 
   switch (type) {
     case constants.GET_POST_LIST:

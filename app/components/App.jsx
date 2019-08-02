@@ -4,12 +4,13 @@ import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import Header from './header/Header';
 const PostsList = lazy(() => import('./posts-list/PostsList'));
 const About = lazy(() => import('./about/About'));
+import styles from './styles.css';
 
 class MyComponent extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <Suspense fallback={<div>Loading...</div>}>
           <Router>
             <Header />
