@@ -4,7 +4,7 @@ import styles from './header.styles.css';
 
 function Header() {
   return (
-    <header>
+    <header className="container" >
       <div className={styles.headerInner}>
         <div>
           <h1>Ivan Ferenchuk</h1>

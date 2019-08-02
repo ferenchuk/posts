@@ -1,9 +1,7 @@
 import * as constants from './postList.constants';
 
 const initialState = {
-  items: [],
-  page: 1,
-  count: 5
+  items: []
 };
 
 export default function posts(state = initialState, action) {

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import {
   getPostsList
 } from './postList.actions';
@@ -15,6 +16,7 @@ class PostsList extends Component {
     };
 
     this.onChangePage = this.onChangePage.bind(this);
+    this.generateImage = this.generateImage.bind(this);
   }
 
   componentDidMount() {
@@ -28,25 +30,35 @@ class PostsList extends Component {
 
   }
 
+  generateImage() {
+    return 'https://source.unsplash.com/800x450';
+  }
+
   onChangePage(pagePosts) {
     this.setState({ pagePosts: pagePosts });
   }
 
   render() {
     const { pagePosts } = this.state;
+    const { match } = this.props;
+
+    console.log(this.generateImage());
 
     return (
-      <div>
+      <div className="container">
         <div className={styles['post-list-wrapper']}>
           {pagePosts && pagePosts.map(post => (
             <div className={styles['post-list-item']} key={post.id}>
-              <img src="https://source.unsplash.com/WLUHO9A_xik/800x450" alt="" />
-              <h2>{post.title}</h2>
+              <img src={this.generateImage()} alt="" />
+              <Link to={`${match.url}/${post.id}`}><h2>{post.title}</h2></Link>
               <p>{post.body}</p>
             </div>
           ))}
         </div>
-        <Pagination items={this.state.posts} onChangePage={this.onChangePage} />
+        <Pagination
+          items={this.state.posts}
+          onChangePage={this.onChangePage}
+        />
       </div>
     );
   }

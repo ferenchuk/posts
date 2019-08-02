@@ -26,3 +26,15 @@
 .post-list-item p {
   color: #757575;
 }
+
+@media screen and (max-width: 1200px) {
+  .post-list-item {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .post-list-item {
+    width: 100%;
+  }
+}

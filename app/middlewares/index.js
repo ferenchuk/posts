@@ -7,7 +7,7 @@ const middleware = compose(
     thunkMiddleware,
     sagaMiddleware
   ),
-  window.devToolsExtension ? window.devToolsExtension() : devTools => devTools
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
 export default middleware;

@@ -1,0 +1,65 @@
+.post {
+
+}
+
+.post img {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.content {
+  padding: 0 100px 50px;
+}
+
+.author {
+  composes: content;
+}
+
+.author span {
+  padding: 0 10px;
+}
+
+.author span:not(:last-child) {
+  border-right: 1px solid gray;
+}
+
+.title {
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  border-bottom: 1px solid lightgray;
+}
+
+.comments {
+  composes: content;
+}
+
+.comment {
+  margin-bottom: 20px;
+}
+
+.comment-body {
+  color: #6f6f6f;
+}
+
+.comment-author {
+  color: #000000;
+  font-weight: bold;
+}
+
+.comment-author span {
+  margin-left: 20px;
+  font-weight: normal;
+  color: gray;
+}
+
+@media screen and (max-width: 1200px) {
+  .content {
+    padding: 0 50px 25px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+    padding: 0 20px 10px;
+  }
+}

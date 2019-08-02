@@ -45,19 +45,19 @@ class Pagination extends Component {
     let totalPages = Math.ceil(totalItems / pageSize);
 
     let startPage, endPage;
-    if (totalPages <= 10) {
+    if (totalPages <= 5) {
       startPage = 1;
       endPage = totalPages;
     } else {
-      if (currentPage <= 6) {
+      if (currentPage <= 3) {
         startPage = 1;
-        endPage = 10;
-      } else if (currentPage + 4 >= totalPages) {
-        startPage = totalPages - 9;
+        endPage = 5;
+      } else if (currentPage + 2 >= totalPages) {
+        startPage = totalPages - 5;
         endPage = totalPages;
       } else {
-        startPage = currentPage - 5;
-        endPage = currentPage + 4;
+        startPage = currentPage - 2;
+        endPage = currentPage + 2;
       }
     }
 
@@ -91,7 +91,7 @@ class Pagination extends Component {
           <a onClick={() => this.setPage(1)}>First</a>
         </li>
         <li className={pager.currentPage === 1 ? `${styles.disabled}` : ''}>
-          <a onClick={() => this.setPage(pager.currentPage - 1)}>Previous</a>
+          <a onClick={() => this.setPage(pager.currentPage - 1)}>Prev</a>
         </li>
         {pager.pages.map((page, index) =>
           <li key={index} className={pager.currentPage === page ? `${styles.active}` : ''}>
